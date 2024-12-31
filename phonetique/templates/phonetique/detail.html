@@ -1,0 +1,39 @@
+{%extends 'phonetique/base.html'%}
+{%block content%}
+<div class="container d-flex justify-content-center" >
+  <div class="row">
+    <div class="col">
+      <a href="{% url 'text_transform' %}" class="btn btn-primary">Retour</a>
+    </div>
+  </div>
+  <aside class="tengah-side" style="max-width: 500px; margin: auto; background-color: #e5e8ef; padding: 10px;">
+    <div class="chat-room-head">
+      <h2 style="text-align: center; font-size: 2rem; font-weight: bold;">Historique</h2>
+    </div>
+    <div class="group-rom">
+      <div class="container" style="height: 60vh; overflow: scroll;">
+        <!-- Ma question posée -->
+        <div>
+          {% if original_text %}
+          <div style="margin-left: 200px;margin-bottom: 10px; background-color: rgb(161, 161, 231); border-radius: 10px 10px 0 10px; padding: 5px;">
+            <h3>Moi</h3>
+            <p>{{ original_text }}</p>
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Réponse du texte modifié -->
+        <div>
+          {% if transformed_text %}
+          <div style="margin-right: 200px; background-color: rgb(161, 161, 168); border-radius: 10px 10px 10px 0; padding:5px;">
+            <h3>Réponse</h3>
+            <p>{{ transformed_text }}</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+{%endblock%}
