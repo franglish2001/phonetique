@@ -1,12 +1,12 @@
 from django.db import models
 from django.utils import timezone
 
-
 class TextTransformation(models.Model):
     original_text = models.TextField()
     transformed_text = models.TextField(blank=True)
     fonction = models.TextField()
-    date = models.DateField(default=timezone.now)
+    date = models.DateTimeField(default=timezone.now)  # Utilisation de DateTimeField
+
     def __str__(self):
         return self.original_text
 
