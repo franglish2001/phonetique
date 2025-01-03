@@ -201,9 +201,16 @@
         <!-- alerte de suppression -->
             {% if messages %}
               {% for message in messages %}
-                <div class="alert alert-success" role="alert">
-                    {{ message }}
+              <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                  <img src="..." class="rounded me-2" alt="...">
+                  <strong class="me-auto">Suppression</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
+                <div class="toast-body">
+                  {{message}}
+                </div>
+              </div>
               {% endfor %}
             {% endif %}
 
